@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2019 at 07:10 AM
+-- Generation Time: Dec 11, 2019 at 08:43 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -33,17 +33,10 @@ CREATE TABLE `jobs` (
   `employer` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `company_name` varchar(255) NOT NULL,
-  `job description` text NOT NULL,
+  `description` text NOT NULL,
   `location` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `jobs`
---
-
-INSERT INTO `jobs` (`id`, `employer`, `title`, `company_name`, `job description`, `location`, `timestamp`) VALUES
-(1, 1, 'Fish for hire', 'Fish killer INC', 'We Need the best fish alive', 'Under the sea', '2019-12-11 06:08:07');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +57,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
