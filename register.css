@@ -1,3 +1,38 @@
-body{
-	background-image: url('atom.jpg');
+body {
+   background: linear-gradient(to left, #3ffbfa, #6bc1f7);
 }
+fieldset {   
+border: 1px groove #ddd !important;
+padding: 0 1.4em 1.4em 1.4em !important;
+margin: 0 0 1.5em 0 !important;
+-webkit-box-shadow:  0px 0px 0px 0px #000;
+box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend {
+font-size: 1.2em !important;
+font-weight: bold !important;
+text-align: left !important;
+width:auto;
+padding:0 10px;
+border-bottom:none;
+}   
+
+.form-group button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #01069a;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  }
+
+  fieldset {
+    background: #ffffff;
+  }
