@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2019 at 09:20 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Dec 13, 2019 at 07:04 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,16 +38,6 @@ CREATE TABLE `jobs` (
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `jobs`
---
-
-INSERT INTO `jobs` (`id`, `employer`, `title`, `company_name`, `description`, `location`, `timestamp`) VALUES
-(1, 1, 'Fish for hire', 'Fish killer INC', 'We Need the best fish alive', 'Under the sea', '2019-12-11 06:08:07'),
-(14, 1, 'fasdf', 'asdfasdfasdf', 'sadfas', 'asdfasdf', '2019-12-11 07:23:27'),
-(15, 1, 'asdasdasa', 'dsadasd', 'a', 'asdasd', '2019-12-11 07:29:27'),
-(16, 1, 'asdas', 'dasdas', 'dasdasd', 'asdasd', '2019-12-11 07:37:41');
-
 -- --------------------------------------------------------
 
 --
@@ -56,16 +46,10 @@ INSERT INTO `jobs` (`id`, `employer`, `title`, `company_name`, `description`, `l
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'fish@fish.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -78,13 +62,6 @@ CREATE TABLE `user_job` (
   `user` int(11) NOT NULL,
   `job` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_job`
---
-
-INSERT INTO `user_job` (`id`, `user`, `job`) VALUES
-(1, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -119,19 +96,19 @@ ALTER TABLE `user_job`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user_job`
 --
 ALTER TABLE `user_job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
