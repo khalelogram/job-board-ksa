@@ -28,6 +28,12 @@ h1
 
 }
 
+h5
+{
+	color:	black;
+	font-weight: 600;
+}
+
 .search-field 
 {
 	height: 20px;
@@ -180,4 +186,32 @@ h4
 	cursor: pointer;
 }
 
+
+.fa {
+  padding: 2px;
+  font-size: 30px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: none;
+  color: black;
+}
+
+.fa-twitter {
+  background: none;
+  color: black;
+}
+
+.fa-linkedin {
+  background: none;
+  color: black;
+}
 
