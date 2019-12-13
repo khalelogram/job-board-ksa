@@ -1,0 +1,365 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+body {
+   background: linear-gradient(to left, #3ffbfa, #6bc1f7);
+}
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #888a99;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form .control {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form .btn-dre {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #09a5c7;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form .btn-dre:hover,.form .btn-dre:active,.form .btn-dre:focus {
+  background: #47aaff;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #1a29da;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #019bf5, #acc9f7);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+p.message{
+  font-weight: bold;
+  font-color: #ffffff;
+}
+
+
+/* choose css */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+/*Choose css*/
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  opacity: 0.6
+
+}
+body 
+{
+  margin: 0;
+  padding: 0;
+}
+
+
+.header-search 
+{
+
+  height: 500px;
+  background-image: linear-gradient(rgba(0,0,0,0.5)), url("header.jpg") !important;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+h1 
+{
+  color: white;
+  margin-bottom: 20px;
+  font-size: 35px;
+  letter-spacing: 1px;
+  text-align: center;
+
+}
+
+h5
+{
+  color:  black;
+  font-weight: 600;
+}
+
+.search-field 
+{
+  height: 20px;
+  padding: 10px;
+  /*border: none;*/
+  border-radius: 30px;
+  /*outline: none;*/
+  box-sizing: unset;
+}
+
+.job-field
+{
+  width: 600px;
+}
+
+
+
+.search-btn
+{
+  height: 50px;
+  width: 150px;
+  background: #ffeb3b;
+  border: none;
+  color: #000;
+  border-radius: 25px;
+}
+
+.search-btn:hover
+{
+  background: #ffc107;
+  cursor: pointer;
+}
+
+.form-box
+{
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+}
+
+
+.browse-by-skill
+{
+  /*position: relative;*/
+  /*height: 800px;*/
+}
+
+.browse-by-company
+{
+  /*height: 400px;*/
+
+}
+
+h4
+{
+  text-align: center;
+  font-size: 30px;
+}
+
+.development
+{
+  width: 250px;
+  height: 300px;
+  background-color: red;
+  margin-left: 50px;
+  float: left;
+  text-align: center;
+}
+
+.marketing
+{
+  width: 250px;
+  height: 300px;
+  background-color: red;
+  margin-left: 60px;
+  float: left;
+  text-align: center;
+}
+
+.design-multimedia
+{
+  width: 250px;
+  height: 300px;
+  background-color: red;
+  margin-left: 60px;
+  float: left;
+  text-align: center;
+}
+
+.writing-content
+{
+  width: 250px;
+  height: 300px;
+  background-color: red;
+  margin-left: 60px;
+  float: left;
+  text-align: center;
+}
+
+.database-it
+{
+  width: 250px;
+  height: 300px;
+  background-color: red;
+  margin-left: 50px;
+  margin-top: 10px;
+  float: left;
+  text-align: center;
+}
+
+.admin
+{
+  width: 250px;
+  height: 300px;
+  background-color: red;
+  margin-left: 60px;
+  margin-top: 10px;
+  float: left;
+  text-align: center;
+}
+
+.consulting
+{
+  width: 250px;
+  height: 300px;
+  background-color: red;
+  margin-left: 60px;
+  margin-top: 10px;
+  float: left;
+  text-align: center;
+}
+
+.list-unstyled
+{
+  list-style: none;
+  text-align: center;
+  /*display: flex;*/
+  flex-direction: column;
+}
+
+.list-unstyled>li
+{
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+
+.view-all-skills:hover
+{ 
+  background: #ffc107;
+  cursor: pointer;
+}
+
+
+.fa {
+  padding: 2px;
+  font-size: 30px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: none;
+  color: black;
+}
+
+.fa-twitter {
+  background: none;
+  color: black;
+}
+
+.fa-linkedin {
+  background: none;
+  color: black;
+}
+
