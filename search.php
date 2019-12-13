@@ -38,7 +38,7 @@
 		<div class="row">
 			<div class="col-12 col-sm-4 col-md-3 text-center p-3">
 				<div class="skill-img-container">
-					<img srcset="./img/development.png">		
+					<img srcset="./img/development.png">					
 				</div>
 				<div class="kinulong my-3">
 				<a class="category-title" href="#"> DEVELOPMENT </a>
@@ -101,7 +101,7 @@
 
 			<div class="col-12 col-sm-4 col-md-3 text-center p-3">
 				<div class="skill-img-container">
-					<img srcset="./img/writing-content.png">		
+					<img srcset="./img/writing-content.png">					
 				</div>
 				<div class="kinulong my-3">
 				<a class="category-title" href="#"> WRITING & CONTENT </a>
@@ -262,7 +262,7 @@
 						    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
 				        </div>
 						<div class="person-text rel"><br><br>
-			                <img src="./img/gan.jpg">										
+			                <img src="./img/gan.jpg">											
 						</div>
 					</div> 
 	            </div>
@@ -276,7 +276,7 @@
 						    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
 				        </div>
 						<div class="person-text rel"><br><br>
-			                <img src="./img/mj.png">								
+			                <img src="./img/mj.png">											
 						</div>
 					</div> 
 	            </div>
@@ -290,7 +290,7 @@
 						    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
 				        </div>
 						<div class="person-text rel"><br><br>
-			                <img src="./img/dexter.png">								
+			                <img src="./img/dexter.png">											
 						</div>
 					</div> 
 	            </div>
@@ -304,7 +304,7 @@
 						    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
 				        </div>
 						<div class="person-text rel"><br><br>
-			                <img src="./img/lorence.png">				
+			                <img src="./img/lorence.png">											
 						</div>
 					</div> 
 	            </div>
