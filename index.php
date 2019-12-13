@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
+<?php include "inc/header.php" ?>
 
-	<title>Job Board</title>
 
-	<!-- RESPONSIVE TAG -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
-</head>
+
 <body>
-	<!-- Start HTML Here -->
-	<div id="main">
+	 <div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <input type="text" placeholder="username"/>
+      <input type="password" placeholder="password"/>
+      <button>login</button>
+      <p class="message">Not registered? Create an account</a></p>
+    </form>
+  </div>
+</div>
 
-
-
-	</div>
-	<!-- END HTML Here -->
-	<!-- Jquery Plugin -->
-	<script type="text/javascript" src="./lib/jquery/jquery.min.js"></script>
-	<!-- Bootstrap Plugin -->
-	<script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+<?php include "inc/footer.php" ?>

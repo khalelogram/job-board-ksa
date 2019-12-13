@@ -1,22 +1,5 @@
-<?php include ('server.php') ?>
+<?php include "inc/header.php" ?>
 
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="register.css">
-	
-
-	<title>REGISTER</title>
-</head>
 <body>
 <div class="container">
   
@@ -103,6 +86,7 @@
 <input type="password" name="confirm_password" value="" id="confirm_password" placeholder="Confirm Password" class="form-control" />
 <br>
 <button type="submit" name="register" class="btn">REGISTER</button>
+
 </div>
 </div>
 
@@ -112,7 +96,7 @@
 
 </div>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
