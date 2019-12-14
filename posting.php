@@ -39,7 +39,7 @@
 			Company Name: <input class="form-control" type="text" name="company_name" placeholder="Your Company"required><br>
 			Job Description: <textarea class="form-control" rows="5" name="description" placeholder="What this job needs" required></textarea><br>
 			Location: <input class="form-control" type="text" name="location" placeholder="Where your company is located" required><br>
-			<input class="btn btn-success" type="submit" name="post" value="post">
+			<input class="btn btn-info" type="submit" name="post" value="Post">
 		</form>
 	</div>
 	<!-- END HTML Here -->
@@ -51,20 +51,22 @@
 	<script src="./lib/sweetalert2/sweetalert.min.js"></script>
 	<!-- CUSTOM JS -->
 	<script>
-		var postStatus = "<?php echo $postStatus; ?>";
-		if(postStatus == "success"){
-			Swal.fire({
-				icon: 'success',
-				title: 'Success!',
-				text: 'You have successfully posted the job',
-			});
-		}else if(postStatus == "failed"){
-			Swal.fire({
-				icon: 'error',
-				title: 'Oops...',
-				text: 'Something went wrong!'
-			});
-		}
+		$(document).ready(function(){
+			var postStatus = "<?php echo $postStatus; ?>";
+			if(postStatus == "success"){
+				Swal.fire({
+					icon: 'success',
+					title: 'Success!',
+					text: 'You have successfully posted the job',
+				});
+			}else if(postStatus == "failed"){
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Something went wrong!'
+				});
+			}
+		});
 	</script>
 </body>
 </html>
