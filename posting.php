@@ -1,5 +1,5 @@
 <?php
-	require_once('./db.php');
+	require_once('php/db.php');
 	$postStatus = "";
 	if($_POST){
 		if(isset($_POST["post"]) && $_POST["post"] == "post"){

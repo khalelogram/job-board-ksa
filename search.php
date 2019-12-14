@@ -10,20 +10,21 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<!-- Customed CSS -->
 	<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-	<link rel="stylesheet" href="./lib/style.css">
-	<link rel="stylesheet" href="./lib/style3.css">
-	<link rel="stylesheet" type="text/css" href="./lib/carousel.css">
-	<link rel="stylesheet" type="text/css" href="./lib/message2.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/style3.css">
+	<link rel="stylesheet" type="text/css" href="./css/carousel.css">
+	<link rel="stylesheet" type="text/css" href="./css/message2.css">
 	
 </head>
 <body>
+	<?php include_once('nav.php'); ?>
 	<!-- Start HTML Here -->
-	<div class="header-search" style="background-image: url('header.jpg');">
+	<div class="header-search" style="background-image: url('./img/header.jpg');">
 		<!-- Header  -->
-		<form>
+		<form method="GET" action="results.php">
 			<h1> The FREE way to find the best JOB for you </h1>	
 			<div class="form-box">
-				<input type="text" class="search-field job-field" placeholder="Search your job here">	
+				<input type="text" class="search-field job-field" placeholder="Search your job here" name="q">	
 				<button class="search-btn" type="button">Job Search</button>	
 			</div>
 		</form>
@@ -37,7 +38,7 @@
 		<div class="row">
 			<div class="col-12 col-sm-4 col-md-3 text-center p-3">
 				<div class="skill-img-container">
-					<img srcset="./lib/img/development.png">					
+					<img srcset="./img/development.png">					
 				</div>
 				<div class="kinulong my-3">
 				<a class="category-title" href="#"> DEVELOPMENT </a>
@@ -58,7 +59,7 @@
 
 			<div class="col-12 col-sm-4 col-md-3 text-center p-3">
 				<div class="skill-img-container">
-					<img srcset="./lib/img/marketing.png">					
+					<img srcset="./img/marketing.png">					
 				</div>
 				<div class="kinulong my-3">
 				<a class="category-title" href="#"> MARKETING & SKILLS </a>
@@ -79,7 +80,7 @@
 
 			<div class="col-12 col-sm-4 col-md-3 text-center p-3">
 				<div class="skill-img-container">
-					<img srcset="./lib/img/design-multmedia.png">					
+					<img srcset="./img/design-multmedia.png">					
 				</div>
 				<div class="kinulong my-3">
 				<a class="category-title" href="#"> DESIGN & MULTIMEDIA </a>
@@ -100,7 +101,7 @@
 
 			<div class="col-12 col-sm-4 col-md-3 text-center p-3">
 				<div class="skill-img-container">
-					<img srcset="./lib/img/writing-content.png">					
+					<img srcset="./img/writing-content.png">					
 				</div>
 				<div class="kinulong my-3">
 				<a class="category-title" href="#"> WRITING & CONTENT </a>
@@ -121,7 +122,7 @@
 
 			<div class="col-12 col-sm-4 col-md-3 text-center p-3">
 				<div class="skill-img-container">
-					<img srcset="./lib/img/database-it.png">					
+					<img srcset="./img/database-it.png">					
 				</div>
 				<div class="kinulong my-3">
 				<a class="category-title" href="#"> DATABASE & IT </a>
@@ -142,7 +143,7 @@
 
 			<div class="col-12 col-sm-4 col-md-3 text-center p-3">
 				<div class="skill-img-container">
-					<img srcset="./lib/img/admin.png">					
+					<img srcset="./img/admin.png">					
 				</div>
 				<div class="kinulong my-3">
 				<a class="category-title" href="#"> ADMIN </a>
@@ -163,7 +164,7 @@
 
 			<div class="col-12 col-sm-4 col-md-3 text-center p-3">
 				<div class="skill-img-container">
-					<img srcset="./lib/img/consulting.png">					
+					<img srcset="./img/consulting.png">					
 				</div>
 				<div class="kinulong my-3">
 				<a class="category-title" href="#"> BUSINESS CONSULTING </a>
@@ -195,14 +196,14 @@
 			<div id="carouselExampleInterval" class="carousel slide col-md-8 mx-auto"  data-ride="carousel">
 			  <div class="carousel-inner">
 			    <div class="carousel-item active" data-interval="10000">
-			      <img src="./lib/img/Sanmig.png" class="d-block w-100 ml-0" alt="...">
+			      <img src="./img/Sanmig.png" class="d-block w-100 ml-0" alt="...">
 			    </div>
 			    <div class="carousel-item" data-interval="2000">
-			      <img src="./lib/img/nokia.jpg" class="d-block w-100 ml-0" alt="...">
+			      <img src="./img/nokia.jpg" class="d-block w-100 ml-0" alt="...">
 			    </div>
 
 			    <div class="carousel-item">
-			      <img src="./lib/img/ibm.jpg" class="d-block w-100 ml-0" alt="...">
+			      <img src="./img/ibm.jpg" class="d-block w-100 ml-0" alt="...">
 			    </div>			    
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -247,7 +248,7 @@
 						    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
 				        </div>
 						<div class="person-text rel"><br><br>
-			                <img src="./lib/img/bam.png">											
+			                <img src="./img/bam.png">											
 						</div>
 					</div> 
 	            </div>
@@ -261,7 +262,7 @@
 						    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
 				        </div>
 						<div class="person-text rel"><br><br>
-			                <img src="./lib/img/gan.jpg">											
+			                <img src="./img/gan.jpg">											
 						</div>
 					</div> 
 	            </div>
@@ -275,7 +276,7 @@
 						    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
 				        </div>
 						<div class="person-text rel"><br><br>
-			                <img src="./lib/img/mj.png">											
+			                <img src="./img/mj.png">											
 						</div>
 					</div> 
 	            </div>
@@ -289,7 +290,7 @@
 						    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
 				        </div>
 						<div class="person-text rel"><br><br>
-			                <img src="./lib/img/dexter.png">											
+			                <img src="./img/dexter.png">											
 						</div>
 					</div> 
 	            </div>
@@ -303,7 +304,7 @@
 						    <ins class="ab zmin sprite sprite-i-triangle block"></ins>
 				        </div>
 						<div class="person-text rel"><br><br>
-			                <img src="./lib/img/lorence.png">											
+			                <img src="./img/lorence.png">											
 						</div>
 					</div> 
 	            </div>

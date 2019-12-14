@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark mb-0">
   <!-- Brand -->
   <a class="navbar-brand" href="#">Job Board</a>
 
