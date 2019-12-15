@@ -19,7 +19,7 @@
 			if(mysqli_num_rows($result) == 1){
 				$response['result'] = 1;
 				$user = mysqli_fetch_assoc($result);
-				setcookie('user',$user["id"]);
+				setcookie('user',$user["id"],time() + (86400 * 30),"/");
 			}else{
 				$response['msg'] = 'Invalid Username or Password';
 			}

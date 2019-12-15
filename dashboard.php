@@ -3,13 +3,41 @@
 	if(isset($_COOKIE['user'])){
 		require_once('php/db.php');
 		$id = $_COOKIE['user'];
-		$query = "SELECT id FROM users WHERE id = '$id'";
+		$query = "SELECT users.name,
+					users.email
+					FROM users
+					WHERE users.id = '$id'";
 		$result = mysqli_query($db,$query);
-		if(mysqli_num_rows($result) != 1){
+		if(mysqli_num_rows($result) == 1){
+			$user = mysqli_fetch_assoc($result);
+			$user['initial'] = substr($user["name"], 0,1);
+			$query = "SELECT 
+                    jobs.title,
+                    jobs.company_name,
+                    jobs.description,
+                    jobs.location,
+                    jobs.timestamp,
+                    jobs.employer
+					FROM jobs
+					LEFT JOIN user_job ON user_job.job = jobs.id
+                    WHERE jobs.employer = '$id' OR user_job.user = '$id'";
+            $result = mysqli_query($db,$query);
+            $posts = array();
+            $user["jobs"] = 0;
+            $user["posts"] = 0;
+            while ($row = mysqli_fetch_assoc($result)) {
+            	array_push($posts, $row);
+            	if($row["employer"] == $id){
+            		$user["posts"]++;
+            	}else{
+            		$user["jobs"]++;
+            	}
+            }
+		}else{
 			header("location: ./");
 		}
 	}else{
-		// header("location: ./");
+		header("location: ./");
 	}
 ?>
 <!DOCTYPE html>
@@ -24,19 +52,49 @@
 	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
 	<style>
 		.profile{
-			width: 280px;
-			height: 100vh;
-			position: absolute;
+			width: 180px;
+			height: 100%;
+			position: fixed;
 			left: 0;
 			top: 0;
-			bottom: 0;
+			z-index: 1;
+			padding-top: 60px;
+			background-color: #17a2b8;
+			transition: 0.5s;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: white;
+		}
+		.profile>div{
+			margin-bottom: 15px;
+		}
+		.navbar{
+			z-index: 2;
+		    position: -webkit-sticky;
+		    position: sticky;
+		    top: 0;
+		    z-index: 1020;
 		}
 		.dashboard{
-			/*margin-left: 280px;*/
+			margin-left: 180px;
+			transition: margin-left 0.5s;
+		}
+		@media screen and (max-width: 768px){
+			.dashboard{
+				margin-left: 0px;
+			}
+			.profile{
+				width: 0px;
+				opacity: 0;
+			}
 		}
 		.job-item{
 			border-bottom: 1px dotted #17a2b8;
 			padding: 15px;
+		}
+		.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+			background-color: rgba(0, 0, 0, 0.26);
 		}
 	</style>
 </head>
@@ -44,163 +102,80 @@
 	<!-- Start HTML Here -->
 	<?php include_once("./nav.php") ?>
 	<div class="container">
-		<!-- <div class="profile bg-info">
-			
-		</div> -->
-		<div class="" lass="dashboard">
+		<div class="profile">
+			<div style="width: 100px;height: 100px;border-radius: 50%; background-color:white;color: #17a2b8;display: flex;align-items: center; justify-content: center;font-weight: 400;font-size: 50px;"><?php echo $user['initial']; ?></div>
+			<div><?php echo $user['name']; ?></div>
+			<div class="small"><?php echo $user['email']; ?></div>
+			<div>Jobs Applied: <?php echo $user['jobs']; ?></div>
+			<div>Jobs Posted: <?php echo $user['posts']; ?></div>
+		</div>
+		<div class="dashboard">
 			<h2 class="text-center">Job Status</h2>
 
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-			<div class="job-item row align-items-center text-md-center">
-				<div class="col-sm-4 mb-2">
-					<h4>Title</h4>
-					<div>Short Description</div>
-				</div>
-				<div class="col-sm-4 mb-2">
-					<div>Location</div>
-					<div>Current Status</div>
-				</div>
-				<div class="col-sm-4 text-center">
-					<a href="details.php?id=1">
-						<button class="btn btn-info">More Details</button>
-					</a>
-				</div>
-			</div>
-
+				<ul class="nav nav-pills nav-justified bg-info">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" data-toggle="tab" href="#ongoing">Applications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" data-toggle="tab" href="#completed">Job Posts</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="ongoing" class="tab-pane active">
+                        <table class="table">
+                            <tbody id="ongoing-orders">
+								<?php 
+									foreach ($posts as $post) {
+										if($post["employer"] != $id){
+											echo "<div class='job-item row align-items-center'>
+													<div class='col-sm-4 mb-2'>
+														<h5>".$post["title"]."</h5>
+														<div class='small'>".$post["description"]."</div>
+													</div>
+													<div class='col-sm-4 mb-2 text-md-center'>
+														<div>".$post["location"]."</div>
+														<div>Current Status</div>
+													</div>
+													<div class='col-sm-4 text-center'>
+														<a href='details.php?id=1'>
+															<button class='btn btn-info'>More Details</button>
+														</a>
+													</div>
+												</div>";
+										}
+									}
+								?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="completed" class="tab-pane fade">
+                        <table class="table">
+                            <tbody id="completed-orders">
+								<?php 
+									foreach ($posts as $post) {
+										if($post["employer"] == $id){
+											echo "<div class='job-item row align-items-center'>
+													<div class='col-sm-4 mb-2'>
+														<h5>".$post["title"]."</h5>
+														<div class='small'>".$post["description"]."</div>
+													</div>
+													<div class='col-sm-4 mb-2 text-md-center'>
+														<div>".$post["location"]."</div>
+														<div>Current Status</div>
+													</div>
+													<div class='col-sm-4 text-center'>
+														<a href='details.php?id=1'>
+															<button class='btn btn-info'>More Details</button>
+														</a>
+													</div>
+												</div>";
+										}
+									}
+								?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<!-- END HTML Here -->
@@ -213,6 +188,7 @@
 	<!-- Custom JS -->
 	<script>
 		$(document).ready(function(){
+
 		});
 	</script>
 </body>

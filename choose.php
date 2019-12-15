@@ -9,7 +9,7 @@
 			header("location: ./");
 		}
 	}else{
-		// header("location: ./");
+		header("location: ./");
 	}
 	$justLoggedIn = false;
 	if(isset($_GET['loggedIn'])){
