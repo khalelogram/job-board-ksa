@@ -84,7 +84,7 @@
 											echo "<div class='job-item row align-items-center'>
 													<div class='col-sm-4 mb-2'>
 														<h5>".$post["title"]."</h5>
-														<div class='small'>".$post["description"]."</div>
+														<div class='small'>".$post["company_name"]."</div>
 													</div>
 													<div class='col-sm-4 mb-2 text-md-center'>
 														<div>".$post["location"]."</div>
@@ -111,7 +111,7 @@
 											echo "<div class='job-item row align-items-center'>
 													<div class='col-sm-4 mb-2'>
 														<h5>".$post["title"]."</h5>
-														<div class='small'>".$post["description"]."</div>
+														<div class='small'>".$post["company_name"]."</div>
 													</div>
 													<div class='col-sm-4 mb-2 text-md-center'>
 														<div>".$post["location"]."</div>
