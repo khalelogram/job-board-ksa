@@ -23,7 +23,97 @@ label{
 .form-control{
 	margin-bottom: 10px;
 }
+.profile{
+	width: 180px;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	padding-top: 60px;
+	background-color: #17a2b8;
+	transition: 0.5s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+}
+.profile>div{
+	margin-bottom: 15px;
+}
+.navbar{
+	z-index: 2;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+.dashboard{
+	margin-left: 180px;
+	transition: margin-left 0.5s;
+}
+@media screen and (max-width: 768px){
+	.dashboard{
+		margin-left: 0px;
+	}
+	.profile{
+		width: 0px;
+		opacity: 0;
+	}
+}
+.job-item{
+	border-bottom: 1px dotted #17a2b8;
+	padding: 15px;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+	background-color: rgba(0, 0, 0, 0.26);
+}
 
+.profile{
+	width: 180px;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	padding-top: 60px;
+	background-color: #17a2b8;
+	transition: 0.5s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+}
+.profile>div{
+	margin-bottom: 15px;
+}
+.navbar{
+	z-index: 2;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+.dashboard{
+	margin-left: 180px;
+	transition: margin-left 0.5s;
+}
+@media screen and (max-width: 768px){
+	.dashboard{
+		margin-left: 0px;
+	}
+	.profile{
+		width: 0px;
+		opacity: 0;
+	}
+}
+.job-item{
+	border-bottom: 1px dotted #17a2b8;
+	padding: 15px;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+	background-color: rgba(0, 0, 0, 0.26);
+}
 
 /*REAGAN START*/
 

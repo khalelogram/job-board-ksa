@@ -12,6 +12,7 @@
 			$user = mysqli_fetch_assoc($result);
 			$user['initial'] = substr($user["name"], 0,1);
 			$query = "SELECT 
+                    jobs.id,
                     jobs.title,
                     jobs.company_name,
                     jobs.description,
@@ -49,54 +50,7 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
 	<!-- CUSTOM CSS -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-	<style>
-		.profile{
-			width: 180px;
-			height: 100%;
-			position: fixed;
-			left: 0;
-			top: 0;
-			z-index: 1;
-			padding-top: 60px;
-			background-color: #17a2b8;
-			transition: 0.5s;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			color: white;
-		}
-		.profile>div{
-			margin-bottom: 15px;
-		}
-		.navbar{
-			z-index: 2;
-		    position: -webkit-sticky;
-		    position: sticky;
-		    top: 0;
-		    z-index: 1020;
-		}
-		.dashboard{
-			margin-left: 180px;
-			transition: margin-left 0.5s;
-		}
-		@media screen and (max-width: 768px){
-			.dashboard{
-				margin-left: 0px;
-			}
-			.profile{
-				width: 0px;
-				opacity: 0;
-			}
-		}
-		.job-item{
-			border-bottom: 1px dotted #17a2b8;
-			padding: 15px;
-		}
-		.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-			background-color: rgba(0, 0, 0, 0.26);
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<!-- Start HTML Here -->
@@ -137,7 +91,7 @@
 														<div>Current Status</div>
 													</div>
 													<div class='col-sm-4 text-center'>
-														<a href='details.php?id=1'>
+														<a href='details.php?id=".$post["id"]."'>
 															<button class='btn btn-info'>More Details</button>
 														</a>
 													</div>
@@ -164,7 +118,7 @@
 														<div>Current Status</div>
 													</div>
 													<div class='col-sm-4 text-center'>
-														<a href='details.php?id=1'>
+														<a href='details.php?id=".$post["id"]."'>
 															<button class='btn btn-info'>More Details</button>
 														</a>
 													</div>
@@ -185,11 +139,5 @@
 	<script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script>
 	<!-- Sweet Alert Plugin -->
 	<script src="./lib/sweetalert2/sweetalert.min.js"></script>
-	<!-- Custom JS -->
-	<script>
-		$(document).ready(function(){
-
-		});
-	</script>
 </body>
 </html>
