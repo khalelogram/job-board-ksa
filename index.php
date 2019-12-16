@@ -1,3 +1,16 @@
+<?php
+
+	if(isset($_COOKIE['user'])){
+		require_once('php/db.php');
+		$id = $_COOKIE['user'];
+		$query = "SELECT id FROM users WHERE id = $id";
+		$result = mysqli_query($db,$query);
+		if(mysqli_num_rows($result) == 1){
+			header("location: choose.php");
+		}
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,30 +24,44 @@
 </head>
 <body>
 	<!-- Start HTML Here -->
-	<div class="login-page">
-	  <div class="form">
-	  	<h3>Job Board KSA</h3>
-	    <form method="POST" action="php/action_register.php"  class="register-form">
-	      <input class="control" type="text" placeholder="Full Name" name="fullname" required />
-	      <input class="control" type="password" placeholder="Password" name="password" required />
-	      <input class="control" type="email" placeholder="Email Address" name="email" required />
-	      <input class="btn-dre" type="submit" name="create" value="create">
-	      <p class="message">Already registered? <a href="#">Sign In</a></p>
-	    </form>
-	    <form method="POST" action="php/action_login.php" class="login-form">
-	      <input class="control" type="email" placeholder="Email Address" name="email" required />
-	      <input class="control" type="password" placeholder="Password" name="password" required />
-	      <input class="btn-dre" type="submit" name="login" value="login">
-	      <p class="message">Not registered? <a>Create an account</a></p>
-	    </form>
-	  </div>
+	<div class="forms d-flex">
+		<form id="login" method="POST" class="content">
+			<h3 class="text-center">Job Board Login</h3>
+			<hr>
+			<label for="email">E-mail:</label>
+			<input class="form-control" type="email" name="email" placeholder="yourmail@jobs.com" required>
+			<label for="password">Password:</label>
+			<input class="form-control" type="password" name="password" placeholder="******" required>
+			<div class="d-flex justify-content-between align-items-center">
+				<div>Don't have an account? <a href="#register">Sign Up</a></div>
+				<button class="btn btn-info">Login</button>
+			</div>
+		</form>
+		<form id="register" method="POST" class="content">
+			<h3 class="text-center">Job Board Sign Up</h3>
+			<hr>
+			<label for="email">Full Name:</label>
+			<input class="form-control" type="text" name="name" placeholder="Juan Dela Cruz" required>
+			<label for="email">E-mail:</label>
+			<input class="form-control" type="email" name="email" placeholder="yourmail@jobs.com" required>
+			<label for="password">Password:</label>
+			<input class="form-control" minlength="4" type="password" name="password" placeholder="******" required>
+			<label for="r_password">Repeat Password:</label>
+			<input class="form-control" minlength="4" type="password" name="r_password" placeholder="******" required>
+			<div class="d-flex justify-content-between align-items-center">
+				<div>Already have an account? <a href="#login">Login</a></div>
+				<button class="btn btn-info">Sign Up</button>
+			</div>
+		</form>
 	</div>
 	<!-- END HTML Here -->
 	<!-- Jquery Plugin -->
 	<script type="text/javascript" src="./lib/jquery/jquery.min.js"></script>
 	<!-- Bootstrap Plugin -->
 	<script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Sweet Alert Plugin -->
+	<script src="./lib/sweetalert2/sweetalert.min.js"></script>
 	<!-- CUSTOM JS -->
-	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
