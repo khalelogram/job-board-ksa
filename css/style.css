@@ -149,14 +149,17 @@ h1
 
 
 h5{
+
 	color:	black;
 	font-weight: 600;
 }
+
 
 h6{
 	font-size: 14px;
 	font-weight: normal;
 }
+
 
 .search-field 
 {
@@ -166,14 +169,14 @@ h6{
 	border-radius: 30px;
 	/*outline: none;*/
 	box-sizing: unset;
-
 }
 
 .job-field
 {
 	width: 600px;
 
-}
+
+
 
 
 
@@ -357,6 +360,5 @@ h4
   background: none;
   color: black;
 }
-
 
 /*REAGAN END*/

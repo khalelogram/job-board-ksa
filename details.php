@@ -1,3 +1,4 @@
+
 <?php
 	require_once("php/db.php");
 	if(isset($_COOKIE['user'])){
@@ -32,6 +33,7 @@
 
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,11 +42,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
-	<!-- Custom CSS -->
-	<style>
-	</style>
+
+
 </head>
+
+
+		
+		<?php
+
+			require_once("db.php");
+        	$query = "SELECT * FROM jobs WHERE id =" . $_GET['id'];
+        	$result = mysqli_query($db,$query);
+        	if(mysqli_num_rows($result) == 1){
+        		$job = mysqli_fetch_assoc($result);
+        	}
+		?>
+		
+			
+
+
 <body>
+
 	<?php include_once('nav.php'); ?>
 	<!-- Start HTML Here -->
 	<div id="main">
@@ -79,6 +97,9 @@
 				?>
 			</div>
 		</div>
+
+
+
 	</div>
 	<!-- END HTML Here -->
 	<!-- Jquery Plugin -->

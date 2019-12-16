@@ -326,6 +326,7 @@
 					<h5 class="footer-title">TALENT</h5>
 					<ul class="list-unstyled category-list">
 						<li class="footer-list">
+
 							<h6><a style="color: black"  href="#">How it works</a></h6>
 						</li>
 						<li>
@@ -345,6 +346,7 @@
 						</li>
 						<li>
 							<h6><a style="color: black"  href="#">Categories</a></h6>
+
 						</li>
 					</ul>
 				</div>
@@ -353,6 +355,7 @@
 					<h5 class="footer-title">JOB Board</h5>
 					<ul class="list-unstyled category-list">
 						<li class="footer-list-li">
+
 							<h6><a style="color: black"  href="#">About</a></h6>
 						</li>
 						<li>
@@ -363,6 +366,7 @@
 						</li>
 						<li>
 							<h6><a style="color: black"  href="#">Contacts</a></h6>
+
 						</li>						
 					</ul>
 				</div>
@@ -371,6 +375,7 @@
 					<h5 class="footer-title">MORE</h5>
 					<ul class="list-unstyled category-list">
 						<li>
+
 							<h6><a style="color: black"  href="#">Help center</a></h6>
 						</li>
 						<li>
@@ -390,6 +395,7 @@
 						</li>	
 						<li>
 							<h6><a style="color: black"  href="#">Content Guidelines</a></h6>
+
 						</li>				
 					</ul>
 				</div>
