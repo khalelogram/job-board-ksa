@@ -1,3 +1,39 @@
+
+<?php
+	require_once("php/db.php");
+	if(isset($_COOKIE['user'])){
+		$id = $_COOKIE['user'];
+		$query = "SELECT id FROM users WHERE id = '$id'";
+		$result = mysqli_query($db,$query);
+		if(mysqli_num_rows($result) != 1){
+			header("location: ./");
+		}
+	}else{
+		header("location: ./");
+	}
+
+	if(isset($_GET["id"])){
+		$jobId = $_GET['id'];
+		$query = "SELECT * FROM jobs WHERE id = $jobId";
+		$result = mysqli_query($db,$query);
+		if(mysqli_num_rows($result) == 1){
+			$job = mysqli_fetch_assoc($result);
+			$user_job_id = 0;
+			$query = "SELECT id FROM user_job WHERE job = $jobId AND user = $id";
+			$result = mysqli_query($db,$query);
+			if(mysqli_num_rows($result) == 1){
+				$user_job_id = mysqli_fetch_assoc($result)["id"];
+			}
+		}else{
+			die("This job no longer exists, <a href='./search.php'>click here</a> to browse other jobs");
+		}
+	}else{
+		header("location: ./search.php");
+	}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,10 +42,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
+
 </head>
 <body>
-	<!-- Start HTML Here -->
-	<div id="main">
+
 		
 		<?php
 
@@ -20,51 +56,45 @@
         		$job = mysqli_fetch_assoc($result);
         	}
 		?>
-		<div class="row">
-			<div class="col-12 col-md-6">
-				<h1>Job Description</h1><br>
-				<ul>
-				<li>Candidate must possess at least High School Diploma</li>
-				<li>Required language(s):&nbsp;English, Filipino</li>
-				<li>No work experience required.</li>
-				<li>Required Skill(s): Marketing Skills</li>
-				<li>self-driven, competent and dynamic person</li>
-				<li>Result oriented &amp; with advance selling &amp; negotiation skills</li>
-				<li>Must have a Driver's Lisence at least Non-Pro Restriction 1 &amp; 2</li>
-				<li>Applicant must be residing within the area or willing to be assigned in the said area.</li>
-			</ul>
-			</div>
-			<div class="col-12 col-md-6">
-				<br><br><br>
-				Title: <b>Business Developer Representative</b><br>
-				Company Name: <b>ZESTO CORPORATION</b><br>
-				Work Location: <b>ANTIPOLO</b><br>
-				<button type="btn" class="btn btn-dark">Apply Now</button>
-			</div>
-		</div>
-
-		<div class="col-12 col-md-6">
-				<h1>Job Description</h1><br>
-				<ul>
-				<li>Candidate must possess at least High School Diploma</li>
-				<li>Required language(s):&nbsp;English, Filipino</li>
-				<li>No work experience required.</li>
-				<li>Required Skill(s): Marketing Skills</li>
-				<li>self-driven, competent and dynamic person</li>
-				<li>Result oriented &amp; with advance selling &amp; negotiation skills</li>
-				<li>Must have a Driver's Lisence at least Non-Pro Restriction 1 &amp; 2</li>
-				<li>Applicant must be residing within the area or willing to be assigned in the said area.</li>
-			</ul>
-			</div>
-			<div class="col-12 col-md-6">
-				<br><br><br>
-				Title: <b><?php echo $job['title']; ?></b><br>
-				Company Name: <b>Tech Mahindra Ltd.</b><br>
-				Work Location: <b>Eastwood City</b><br>
-				<button type="btn" class="btn btn-dark">Apply Now</button>
-			</div>
-		</div>
+		
 			
+
+	<!-- Custom CSS -->
+	
+	<?php include_once('nav.php'); ?>
+	<!-- Start HTML Here -->
+	<div id="main">
+		<h2 class="text-center"><?php echo $job["company_name"]; ?></h2>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-6">
+					<h3><?php echo $job["title"]; ?></h3>
+				</div>
+				<div class="col-12 col-md-6 text-md-center">
+					<div>Location: <?php echo $job["location"]; ?></div>
+					<div><?php echo $job["timestamp"]; ?></div>
+				</div>
+			</div>
+			<hr>
+			<div class="container">
+				<h5>Description</h5>
+				<p><?php echo $job["description"]; ?></p>
+			</div>
+			<hr>
+			<div class="row justify-content-center">
+				<?php 
+					if($user_job_id > 0){
+						echo "<button class='btn btn-info'>Cancel Application</button>";
+					}else{
+						if($job["employer"] == $id){
+							echo "<button class='btn btn-info'>Remove This Post</button>";
+						}else{
+							echo "<button class='btn btn-info'>Apply Now!</button>";
+						}
+					}
+				?>
+			</div>
+		</div>
 
 	</div>
 	<!-- END HTML Here -->
