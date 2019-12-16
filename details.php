@@ -43,8 +43,9 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
 
+
 </head>
-<body>
+
 
 		
 		<?php
@@ -59,8 +60,9 @@
 		
 			
 
-	<!-- Custom CSS -->
-	
+
+<body>
+
 	<?php include_once('nav.php'); ?>
 	<!-- Start HTML Here -->
 	<div id="main">
@@ -95,6 +97,8 @@
 				?>
 			</div>
 		</div>
+
+
 
 	</div>
 	<!-- END HTML Here -->
