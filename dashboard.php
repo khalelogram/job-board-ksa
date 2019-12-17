@@ -51,13 +51,22 @@
 	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
 	<!-- CUSTOM CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
+
 <body>
 	<!-- Start HTML Here -->
 	<?php include_once("./nav.php") ?>
 	<div class="container">
 		<div class="profile">
-			<div style="width: 100px;height: 100px;border-radius: 50%; background-color:white;color: #17a2b8;display: flex;align-items: center; justify-content: center;font-weight: 400;font-size: 50px;"><?php echo $user['initial']; ?></div>
+			</br>
+		    </br>
+			<p><img id="output" width="130px;"
+				height="120px;"
+				border-radius= "20px;" /></p>
+			<p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display:none;" ></p>
+				<p><label for="file" style="cursor: pointer;" font-size="15" ><strong>Upload Image</strong></label></p>
+				
 			<div><?php echo $user['name']; ?></div>
 			<div class="small"><?php echo $user['email']; ?></div>
 			<div>Jobs Applied: <?php echo $user['jobs']; ?></div>
@@ -139,5 +148,11 @@
 	<script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script>
 	<!-- Sweet Alert Plugin -->
 	<script src="./lib/sweetalert2/sweetalert.min.js"></script>
+<script>
+	var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+	};
+	</script>
 </body>
 </html>
