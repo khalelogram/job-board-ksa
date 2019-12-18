@@ -70,6 +70,7 @@
                     <li class="nav-item">
                         <a class="nav-link active text-white" data-toggle="tab" href="#ongoing">Applications</a>
                     </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link text-white" data-toggle="tab" href="#completed">Job Posts</a>
                     </li>
