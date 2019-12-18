@@ -70,7 +70,7 @@
         		$job = mysqli_fetch_assoc($result);
         	}
 		?>
-		
+
 	<?php include_once('nav.php'); ?>
 	<!-- Start HTML Here -->
 	<div id="main">
@@ -108,7 +108,6 @@
 			</div>
 		</div>
 
-	</div>
 	<!-- END HTML Here -->
 	<!-- Jquery Plugin -->
 	<script type="text/javascript" src="./lib/jquery/jquery.min.js"></script>
