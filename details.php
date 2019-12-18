@@ -16,6 +16,8 @@
 		$result = mysql_query($sql) or die ("Failed".mysql_error());
 		echo "<meta http-equiv='refresh' content='0;url index.php'>";
 	}
+	
+
 	if(isset($_GET["id"])){
 		$jobId = $_GET['id'];
 		$query = "SELECT * FROM jobs WHERE id = $jobId";
@@ -41,8 +43,9 @@
 		$query .= "LIMIT 1";
 		$result = mysqli_query($db, $query);
 		if(!$result) {
-			exit("Data query failed:" . mysqli_error($db));
+			exit("Data query failed:" . mysqli_error($db));	
 		}
+	
 	}
 ?>
 <!DOCTYPE html>
@@ -63,7 +66,7 @@
 		
 		<?php
 
-			require_once("db.php");
+			require_once("php/db.php");
         	$query = "SELECT * FROM jobs WHERE id =" . $_GET['id'];
         	$result = mysqli_query($db,$query);
         	if(mysqli_num_rows($result) == 1){
@@ -100,6 +103,7 @@
 				?>
 				<a href="details.php?delete=<?php echo $jobId; ?>"><button class='btn btn-info'>Remove This Post</button></a>
 				<?php
+				
 					} else {
 					 echo "<button class='btn btn-info'>Apply Now!</button>";
 					 }
