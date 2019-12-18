@@ -1,4 +1,3 @@
-
 <?php
 	require_once("php/db.php");
 	if(isset($_COOKIE['user'])){
@@ -11,7 +10,12 @@
 	}else{
 		header("location: ./");
 	}
-
+	if(isset($_GET['del'])){
+		$id = $_GET['del'];
+		$sql = "DELETE FROM jobs WHERE id='$id'";
+		$result = mysql_query($sql) or die ("Failed".mysql_error());
+		echo "<meta http-equiv='refresh' content='0;url index.php'>";
+	}
 	if(isset($_GET["id"])){
 		$jobId = $_GET['id'];
 		$query = "SELECT * FROM jobs WHERE id = $jobId";
@@ -30,10 +34,17 @@
 	}else{
 		header("location: ./search.php");
 	}
-
+	if(isset($_GET['delete'])) {
+		$id = 	$_GET['delete'];	
+		$query = "DELETE FROM jobs ";
+		$query .= "WHERE id ='" .$id. "' ";
+		$query .= "LIMIT 1";
+		$result = mysqli_query($db, $query);
+		if(!$result) {
+			exit("Data query failed:" . mysqli_error($db));
+		}
+	}
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,9 +54,11 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
 
-
+	<!-- Custom CSS -->
+	<style>
+	</style>
 </head>
-
+<body>
 
 		
 		<?php
@@ -58,10 +71,7 @@
         	}
 		?>
 		
-			
-
-
-<body>
+		
 
 	<?php include_once('nav.php'); ?>
 	<!-- Start HTML Here -->
@@ -85,22 +95,23 @@
 			<hr>
 			<div class="row justify-content-center">
 				<?php 
-					if($user_job_id > 0){
+					if($user_job_id > 0) {
 						echo "<button class='btn btn-info'>Cancel Application</button>";
-					}else{
+					} else {
 						if($job["employer"] == $id){
-							echo "<button class='btn btn-info'>Remove This Post</button>";
-						}else{
-							echo "<button class='btn btn-info'>Apply Now!</button>";
-						}
-					}
+				?>
+				<a href="details.php?delete=<?php echo $jobId; ?>"><button class='btn btn-info'>Remove This Post</button></a>
+				<?php
+					} else {
+					 echo "<button class='btn btn-info'>Apply Now!</button>";
+					 }
+				  }
 				?>
 			</div>
 		</div>
 
 
-
-	</div>
+  </div>
 	<!-- END HTML Here -->
 	<!-- Jquery Plugin -->
 	<script type="text/javascript" src="./lib/jquery/jquery.min.js"></script>
