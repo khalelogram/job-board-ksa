@@ -53,17 +53,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
-<<<<<<< HEAD
+
 	<!-- Custom CSS -->
 	<style>
 	</style>
 </head>
 <body>
-=======
-
-
-</head>
-
 
 		
 		<?php
@@ -76,12 +71,8 @@
         	}
 		?>
 		
-			
+		
 
-
-<body>
-
->>>>>>> ccc2c38cce360d0243d994b3ce2697e8014317d7
 	<?php include_once('nav.php'); ?>
 	<!-- Start HTML Here -->
 	<div id="main">
@@ -118,13 +109,9 @@
 				?>
 			</div>
 		</div>
-<<<<<<< HEAD
-=======
 
 
-
->>>>>>> ccc2c38cce360d0243d994b3ce2697e8014317d7
-	</div>
+  </div>
 	<!-- END HTML Here -->
 	<!-- Jquery Plugin -->
 	<script type="text/javascript" src="./lib/jquery/jquery.min.js"></script>
