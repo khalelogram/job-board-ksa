@@ -147,11 +147,19 @@ h1
 
 }
 
-h5
-{
+
+h5{
+
 	color:	black;
 	font-weight: 600;
 }
+
+
+h6{
+	font-size: 14px;
+	font-weight: normal;
+}
+
 
 .search-field 
 {
@@ -166,7 +174,9 @@ h5
 .job-field
 {
 	width: 600px;
-}
+
+
+
 
 
 
@@ -191,6 +201,23 @@ h5
 	background: rgba(0,0,0,0.5);
 	padding: 10px;
 }
+
+@media screen and (max-width: 600px){
+	form {
+		margin: 0;
+	}
+	.search-field{
+		width: 200px;
+		border-radius: 5px;
+		padding: 10px;
+	}
+	.search-btn{
+		border-radius: 50px;
+		width: 100px;		
+		position: static;
+	}
+}
+
 
 
 .browse-by-skill

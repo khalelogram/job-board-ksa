@@ -326,25 +326,27 @@
 					<h5 class="footer-title">TALENT</h5>
 					<ul class="list-unstyled category-list">
 						<li class="footer-list">
-							<a style="color: black"  href="#">How it works</a>
+
+							<h6><a style="color: black"  href="#">How it works</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Why we are free</a>
+							<h6><a style="color: black"  href="#">Why we are free</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Agencies</a>
+							<h6><a style="color: black"  href="#">Agencies</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Browse profiles</a>
+							<h6><a style="color: black"  href="#">Browse profiles</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Browse by jobs</a>
+							<h6><a style="color: black"  href="#">Browse by jobs</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Top countries</a>
+							<h6><a style="color: black"  href="#">Top countries</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Categories</a>
+							<h6><a style="color: black"  href="#">Categories</a></h6>
+
 						</li>
 					</ul>
 				</div>
@@ -353,16 +355,18 @@
 					<h5 class="footer-title">JOB Board</h5>
 					<ul class="list-unstyled category-list">
 						<li class="footer-list-li">
-							<a style="color: black"  href="#">About</a>
+
+							<h6><a style="color: black"  href="#">About</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Developers</a>
+							<h6><a style="color: black"  href="#">Developers</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Resources</a>
+							<h6><a style="color: black"  href="#">Resources</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Contacts</a>
+							<h6><a style="color: black"  href="#">Contacts</a></h6>
+
 						</li>						
 					</ul>
 				</div>
@@ -371,25 +375,27 @@
 					<h5 class="footer-title">MORE</h5>
 					<ul class="list-unstyled category-list">
 						<li>
-							<a style="color: black"  href="#">Help center</a>
+
+							<h6><a style="color: black"  href="#">Help center</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Blog</a>
+							<h6><a style="color: black"  href="#">Blog</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">FAQ</a>
+							<h6><a style="color: black"  href="#">FAQ</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Email us</a>
+							<h6><a style="color: black"  href="#">Email us</a></h6>
 						</li>	
 						<li>
-							<a style="color: black"  href="#">Terms</a>
+							<h6><a style="color: black"  href="#">Terms</a></h6>
 						</li>
 						<li>
-							<a style="color: black"  href="#">Privacy</a>
+							<h6><a style="color: black"  href="#">Privacy</a></h6>
 						</li>	
 						<li>
-							<a style="color: black"  href="#">Content Guidelines</a>
+							<h6><a style="color: black"  href="#">Content Guidelines</a></h6>
+
 						</li>				
 					</ul>
 				</div>

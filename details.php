@@ -53,11 +53,35 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
+<<<<<<< HEAD
 	<!-- Custom CSS -->
 	<style>
 	</style>
 </head>
 <body>
+=======
+
+
+</head>
+
+
+		
+		<?php
+
+			require_once("db.php");
+        	$query = "SELECT * FROM jobs WHERE id =" . $_GET['id'];
+        	$result = mysqli_query($db,$query);
+        	if(mysqli_num_rows($result) == 1){
+        		$job = mysqli_fetch_assoc($result);
+        	}
+		?>
+		
+			
+
+
+<body>
+
+>>>>>>> ccc2c38cce360d0243d994b3ce2697e8014317d7
 	<?php include_once('nav.php'); ?>
 	<!-- Start HTML Here -->
 	<div id="main">
@@ -94,6 +118,12 @@
 				?>
 			</div>
 		</div>
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> ccc2c38cce360d0243d994b3ce2697e8014317d7
 	</div>
 	<!-- END HTML Here -->
 	<!-- Jquery Plugin -->
